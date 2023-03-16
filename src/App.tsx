@@ -1,9 +1,10 @@
+import Coming from './components/Coming';
 import './scss/app.scss';
 
 export default function App() {
     return (
         <>
-            <h1>Hello World</h1>
+            <Coming/>
         </>
     );
 }
