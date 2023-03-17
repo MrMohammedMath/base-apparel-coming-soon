@@ -9,6 +9,7 @@ export default function Coming() {
             </picture>
 
             <section className="coming.content">
+                <div className="coming.content.container">
                 <img src="./images/logo.svg" alt="logo" className="coming.content.logo" />
                 
                 <h1 className="coming.content.title">We're <span className="coming.content.title.coming-soon">coming soon</span></h1>
@@ -23,6 +24,7 @@ export default function Coming() {
                         <img src="./images/icon-arrow.svg" alt="" />
                     </button>
                 </form>
+                </div>
             </section>
         </div>
     );

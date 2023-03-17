@@ -1,15 +1,25 @@
 @include component(coming) {
 
-    --left-right-space:1.9em;
+    --left-right-space: 1.9em;
 
     @include desktop {
-        background-image: url('./../../images/bg-pattern-desktop.svg');
-        background-repeat: no-repeat;
-        background-size: 100%;
+
+
+        // display: flex;
+        // flex-direction: row-reverse;
+
+        display: grid;
+        grid-template-columns: 57% 44%;
+        grid-template-areas: 'content hero';
+
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 
     @include part(logo) {
-        grid-area: logo;
         height: 21.5px;
         margin: 1.8em var(--left-right-space);
 
@@ -19,15 +29,49 @@
     }
 
     @include part(hero) {
-        grid-area: hero;
         width: 100%;
+
+        @include desktop {
+            grid-area: hero;
+            // width: unset;
+            // max-width: 400px;
+            height: 100%;
+            flex-grow: 7;
+        }
     }
 
     @include part(content) {
         padding: 0 var(--left-right-space);
+        width: 100%;
+
+
+
+        @include desktop{
+            background-image: url('./../../images/bg-pattern-desktop.svg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            // --left-right-space: 10em;
+            grid-area: content;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include part(container){
+            @include desktop{
+                max-width: min-content;
+            }
+        }
 
         @include part(logo) {
             display: none;
+
+            @include desktop{
+                display: unset;
+                margin: 4em 0 8em 0;
+            }
         }
 
         @include part(title) {
@@ -40,6 +84,16 @@
 
             margin-top: 1.3em;
             margin-bottom: 0.5em;
+
+            @include desktop{
+                text-align: left;
+                font-size: 4rem;
+                letter-spacing: 0.29em;
+                line-height: 1.07;
+
+                margin-top: unset;
+                margin-bottom: unset;
+            }
 
             @include part(coming-soon) {
                 display: block;
@@ -56,16 +110,30 @@
             text-align: center;
             font-weight: 400;
             line-height: 22px;
+
+            @include desktop{
+                margin-top: 1.5em;
+                width: 43ch;
+                text-align: left;
+                line-height: 1.8;
+                font-size: 1rem;
+            }
         }
 
         @include part(email) {
-            align-self: stretch;
             display: grid;
             grid-template-columns: auto 65px;
             border: 1px var(--primary-color) solid;
             border-radius: 200px;
             margin: 2em 0;
             height: 50px;
+
+            @include desktop{
+                width: 43ch;
+                grid-template-columns: auto 100px;
+                margin: 2.2em 0;
+                height: 55px;
+            }
 
             @include part(input) {
                 color: var(--primary-color);
@@ -84,7 +152,6 @@
 
                 background-image: var(--secondary-linear-gradient);
                 box-shadow: 0px 17px 32px -5px rgb(255 0 0 / .15);
-
             }
         }
     }
