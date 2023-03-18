@@ -46,7 +46,7 @@
 
 
 
-        @include desktop{
+        @include desktop {
             background-image: url('./../../images/bg-pattern-desktop.svg');
             background-repeat: no-repeat;
             background-size: 100%;
@@ -59,8 +59,8 @@
             align-items: center;
         }
 
-        @include part(container){
-            @include desktop{
+        @include part(container) {
+            @include desktop {
                 max-width: min-content;
             }
         }
@@ -68,7 +68,7 @@
         @include part(logo) {
             display: none;
 
-            @include desktop{
+            @include desktop {
                 display: unset;
                 margin: 4em 0 8em 0;
             }
@@ -85,7 +85,7 @@
             margin-top: 1.3em;
             margin-bottom: 0.5em;
 
-            @include desktop{
+            @include desktop {
                 text-align: left;
                 font-size: 4rem;
                 letter-spacing: 0.29em;
@@ -111,7 +111,7 @@
             font-weight: 400;
             line-height: 22px;
 
-            @include desktop{
+            @include desktop {
                 margin-top: 1.5em;
                 width: 43ch;
                 text-align: left;
@@ -125,10 +125,10 @@
             grid-template-columns: auto 65px;
             border: 1px var(--primary-color) solid;
             border-radius: 200px;
-            margin: 2em 0;
+            margin: 2em 0 4em 0;
             height: 50px;
 
-            @include desktop{
+            @include desktop {
                 width: 43ch;
                 grid-template-columns: auto 100px;
                 margin: 2.2em 0;
@@ -138,6 +138,8 @@
             @include part(input) {
                 color: var(--primary-color);
                 padding-left: 2em;
+                padding-right: 1em ;
+                border-radius: 200px 0 0 200px;
 
                 &::placeholder {
                     color: var(--primary-color);
