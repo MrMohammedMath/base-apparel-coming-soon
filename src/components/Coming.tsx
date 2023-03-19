@@ -20,7 +20,7 @@ export default function Coming() {
 
                 <form className="coming.content.email">
                     <input type="email" placeholder="Email Address" className="coming.content.email.input" />
-                    <button className="coming.content.email.btn">
+                    <button className="coming.content.email.btn" title="subscribe to newsletter">
                         <img src="./images/icon-arrow.svg" alt="" />
                     </button>
                 </form>
